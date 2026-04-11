@@ -1,4 +1,4 @@
-# calctrab
+# CalculosTrabalhista
 
 Projeto para prática de **testes unitários com JavaScript e Mocha**.
 

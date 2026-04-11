@@ -10,6 +10,8 @@ O projeto implementa funções de cálculos trabalhistas e cobre cada cenário c
 
 - `calculoDiasDeFeriasVendidos(salario, diasFeriasVendidos)` — calcula o valor a ser pago por dias de férias vendidos. O valor por dia é calculado dividindo o salário por 30. Retorna `0` para salário ou dias inválidos (≤ 0) ou para dias superiores a 30.
 
+- `calculoDiasDeFeriasVendidosV2(salario, diasFeriasVendidos)` — variante que lança um erro tratado (`Error`) quando os dias estão fora do intervalo permitido (1–30), em vez de retornar `0`. Permite que o código chamador trate o erro explicitamente com `try/catch`.
+
 ## Estrutura
 
 ```

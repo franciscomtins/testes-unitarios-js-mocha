@@ -1,4 +1,4 @@
-import { calculoDiasDeFeriasVendidos } from '../src/calculoDiasDeFeriasVendidos.js';
+import { calculoDiasDeFeriasVendidos, calculoDiasDeFeriasVendidosV2 } from '../src/calculoDiasDeFeriasVendidos.js';
 import assert from 'node:assert';
 
 describe('calculoDiasDeFeriasVendidos', function() {
@@ -48,4 +48,27 @@ describe('calculoDiasDeFeriasVendidos', function() {
             assert.strictEqual(calculoDiasDeFeriasVendidos(3000, 31), 0);
         });
     });
+
+    describe('entradas de dias inválidas com erro tratado', function() {
+        it('deve retornar erro tratato para 0 dias vendidos', function() {
+            const salarioMensal = 3000;
+            const diasAvender = 0;
+
+            assert.throws(
+                function() { calculoDiasDeFeriasVendidosV2(salarioMensal, diasAvender); },
+                { message: 'Dias devem estar entre 1 e 30.' }
+            );
+        });
+
+        it('deve retornar erro tratato para 31 dias vendidos', function() {
+            const salarioMensal = 3000;
+            const diasAvender = 31;
+
+            assert.throws(
+                function() { calculoDiasDeFeriasVendidosV2(salarioMensal, diasAvender); },
+                { message: 'Dias devem estar entre 1 e 30.' }
+            );
+        });
+    });
+    
 });

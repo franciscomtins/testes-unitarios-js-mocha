@@ -8,14 +8,18 @@ O projeto implementa funções de cálculos trabalhistas e cobre cada cenário c
 
 - `atualizarSalarioComBonus(salarioBruto, senioridade)` — retorna o salário acrescido de um bônus fixo por nível de senioridade (junior, pleno ou senior). Retorna `0` para senioridades não reconhecidas.
 
+- `calculoDiasDeFeriasVendidos(salario, diasFeriasVendidos)` — calcula o valor a ser pago por dias de férias vendidos. O valor por dia é calculado dividindo o salário por 30. Retorna `0` para salário ou dias inválidos (≤ 0) ou para dias superiores a 30.
+
 ## Estrutura
 
 ```
 calctrab/
 ├── src/
-│   └── calculosTrabalhistas.js   # funções de negócio
+│   ├── calculosTrabalhistas.js          # funções de negócio
+│   └── calculoDiasDeFeriasVendidos.js   # cálculo de férias vendidas
 └── test/
-    └── calculosTrabalhistas.test.js  # testes unitários
+    ├── calculosTrabalhistas.test.js          # testes unitários
+    └── calculoDiasDeFeriasVendidos.test.js   # testes de férias vendidas
 ```
 
 ## Dependências

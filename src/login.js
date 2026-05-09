@@ -21,21 +21,17 @@ const senhaEsperada = '123456';
 
 export function logarComSucesso(login, senha) {
 
-    let usuarioEncontrado = false;
+    let usuarioEncontrado = 'Usuário não encontrado.';
 
     usuarios.forEach(function(usuario) {
 
         if (usuario.login === login && usuario.senha === senha) {
-            usuarioEncontrado = true;
+            usuarioEncontrado = 'Logado com sucesso.';
         }
 
     });
 
-    if (usuarioEncontrado) {
-        return 'Logado com sucesso.';
-    } else {
-        return 'Usuário não encontrado.';
-    }
+    return usuarioEncontrado
 }
 
 logarComSucesso(loginEsperado, senhaEsperada);
